@@ -1,3 +1,1 @@
-type InputChangeEvent = React.ChangeEvent<HTMLInputElement>
-
-export { InputChangeEvent }
+export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>

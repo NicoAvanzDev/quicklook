@@ -13,7 +13,7 @@ function Input({ onChange, placeholder }: InputProps) {
   return (
     <input
       type='text'
-      className='p-2 w-full h-full bg-midnight border rounded-md font-semibold focus:ring-blue-500 focus:border-blue-500 outline-none'
+      className='p-2 w-full h-full bg-midnight border rounded-md font-semibold focus:ring-blue-500 focus:border-blue outline-none'
       placeholder={placeholder}
       autoFocus
       onChange={handleChange}

@@ -1,15 +1,16 @@
-import * as React from 'react'
-
 type ListProps = {
   items: string[]
 }
 
 function List({ items }: ListProps) {
   return (
-    <div className='p-2 w-full h-full '>
+    <div className='p-2'>
       <ul>
         {items?.map((item, idx) => (
-          <li key={idx} className='p-2'>
+          <li
+            key={idx}
+            className='p-2 cursor-pointer hover:bg-blue rounded-md font-semibold'
+          >
             {item}
           </li>
         ))}

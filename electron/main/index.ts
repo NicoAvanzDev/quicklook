@@ -27,6 +27,7 @@ import {
 } from 'electron'
 import { release } from 'os'
 import { join } from 'path'
+import { WINDOW_HEIGHT, WINDOW_WIDTH } from '../utils/constants'
 
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith('6.1')) app.disableHardwareAcceleration()
@@ -45,11 +46,9 @@ const preload = join(__dirname, '../preload/index.js')
 const url = process.env.VITE_DEV_SERVER_URL
 const indexHtml = join(process.env.DIST, 'index.html')
 
-const WINDOW_WIDTH = 400
-const WINDOW_HEIGHT = 600
-
 async function createWindow() {
   const { x, y } = getInitialWindowPosition()
+
   win = new BrowserWindow({
     title: 'Main window',
     icon: join(process.env.PUBLIC, 'favicon.svg'),
@@ -59,8 +58,7 @@ async function createWindow() {
     y,
     webPreferences: {
       preload,
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: true
     },
     titleBarStyle: 'hiddenInset',
     frame: false,

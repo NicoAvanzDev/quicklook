@@ -1,1 +1,2 @@
-export type InputChangeEvent = React.ChangeEvent<HTMLInputElement>
+export type InputChangeEvent = React.ChangeEvent<any>
+export type MouseClickEvent = React.MouseEvent<any>

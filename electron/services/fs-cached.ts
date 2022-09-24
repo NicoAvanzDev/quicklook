@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const child_process = require('child_process')
 
 class FileSystemCached {
   private static instance: FileSystemCached
@@ -41,7 +42,7 @@ class FileSystemCached {
   open(file: string) {
     const filePath = this.cache.get(file)
     if (filePath) {
-      require('child_process').execFile(filePath)
+      child_process.execFile(filePath)
     }
   }
 

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { InputChangeEvent } from '../utils/types'
 
 type InputProps = {
@@ -10,6 +9,7 @@ function Input({ onChange, placeholder }: InputProps) {
   const handleChange = (e: InputChangeEvent) => {
     onChange && onChange(e)
   }
+
   return (
     <input
       type='text'
